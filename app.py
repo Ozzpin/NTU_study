@@ -9,7 +9,7 @@ def index():
         model_1 = joblib.load("regression")
         r_1 = model_1.predict([[rates]])
         model_2 = joblib.load("tree")
-        r_2 = model_1.predict([[rates]])
+        r_2 = model_2.predict([[rates]])
         return render_template("index.html", result1 = r_1, result2 = r_2)
     else:
         return render_template("index.html", result1 = "WAITING", result2 = "WAITING")
